@@ -75,15 +75,32 @@ class HomePage extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Icon(
-                      Icons.dashboard,
-                      size: 30,
-                      color: Colors.white,
+                    IconButton(
+                      icon: Icon(
+                        Icons.arrow_back,
+                        size: 30,
+                        color: Colors.white,
+                      ),
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
                     ),
-                    Icon(
-                      Icons.notifications,
-                      size: 30,
-                      color: Colors.white,
+                    Row(
+                      children: [
+                        Icon(
+                          Icons.notifications,
+                          size: 30,
+                          color: Colors.white,
+                        ),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        Icon(
+                          Icons.more_vert,
+                          size: 30,
+                          color: Colors.white,
+                        )
+                      ],
                     )
                   ],
                 ),
@@ -177,8 +194,7 @@ class HomePage extends StatelessWidget {
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2,
                   childAspectRatio:
-                      (MediaQuery.of(context).size.height - 50 - 25) /
-                          (4 * 240),
+                      (MediaQuery.of(context).size.height - 75) / (4 * 240),
                   mainAxisSpacing: 10,
                   crossAxisSpacing: 10,
                 ),
